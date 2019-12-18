@@ -1,1 +1,28 @@
-hello world
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Rechnungserstellung</h2>
+    <form action="/invoice/create" method="post">
+        Rechnungsempfänger:<br>
+        <input type="text" name="receiver" value="Vorname Nachname">
+        <br>
+        Rechnungsdatum:<br>
+        <input type="text" name="date" value="dd.mm.jj">
+        <br>
+        Preis Netto:<br>
+        <input type="text" name="net" value="0,00">
+        <br>
+        MwST-Satz:<br>
+        <input type="text" name="tax" value="0,00">
+        <br>
+        VAT ID:<br>
+        <input type="text" name="vatid" value="0123456789">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>
