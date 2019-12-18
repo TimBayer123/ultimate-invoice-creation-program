@@ -2,15 +2,12 @@
 from invoice import Invoice
 from flask import Flask, request, make_response
 from create_pdf import create_PDF
+
 app = Flask(__name__)
-
-
-def map_request_to_invoice():
-    pass
 
 def check_parameter_string_empty(raw_string):
     if len(raw_string) == 0:
-            return 'parameter is empty', 500
+        return 'parameter is empty', 500
 
 @app.route('/invoice/create', methods=['POST'])
 def invoice_create():
@@ -45,7 +42,6 @@ def invoice_create():
     invoice.apply_vat_regulation()
 
     response = make_response(create_PDF(invoice))
-
     response.headers.set('Content-Disposition', 'attachment', filename='invoice' + '.pdf')
     response.headers.set('Content-Type', 'application/pdf')
     return response
